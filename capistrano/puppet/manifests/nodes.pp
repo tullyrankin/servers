@@ -1,0 +1,7 @@
+node 'capistrano' {
+
+}
+
+node 'web' {
+
+}
