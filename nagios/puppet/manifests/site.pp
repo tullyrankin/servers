@@ -1,1 +1,1 @@
-import "nodes"
+import "nodes/*.pp"
