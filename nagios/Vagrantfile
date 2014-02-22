@@ -10,7 +10,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 		nagios.vm.hostname = "nagios"
   	nagios.vm.network :forwarded_port, guest: 8080, host: 8080
   	nagios.vm.network :private_network, ip: "33.33.33.100"
-  	#nagios.vm.network :public_network
   	nagios.ssh.forward_agent = true
   	nagios.vm.provider :virtualbox do |vb|
   		vb.customize ["modifyvm", :id, "--memory", "1024"]
@@ -28,9 +27,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     web.vm.box = "precise64"
     web.vm.box_url = "http://files.vagrantup.com/precise64.box"
     web.vm.hostname = "web"
-    #web.vm.network :forwarded_port, guest: 8080, host: 8080
     web.vm.network :private_network, ip: "33.33.33.101"
-    #web.vm.network :public_network
     web.ssh.forward_agent = true
    	web.vm.provider :virtualbox do |vb|
       vb.customize ["modifyvm", :id, "--memory", "1024"]
